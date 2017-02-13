@@ -49,7 +49,7 @@ return [
     'table' => [
         'role' => 'role',
         'permission' => 'permission',
-        'user' => 'user',
+        'user' => 'users',
         'permission_role' => 'permission_role',
     ],
     // ...
@@ -65,8 +65,8 @@ By default, models will be storage to `App/Models`, and user table is `user`, or
         // ...
     ],
     'table' => [
-        'user' => 'user',
-        // 'user' => 'users', set user table name to users
+        'user' => 'users', set user table name to users
+        // 'user' => 'user',set user table name to users
     ]
 ```
 
@@ -91,12 +91,6 @@ make auth by default
 and modify the `$redirectTo = '/home'` to `$redirectTo = /admin` in  `LoginController`
 
 Start up a built-in development server, with `php artisan serve`, visit [http://localhost:8000/admin](http://localhost:8000/admin).
-
-__Tips: Make sure the following file have been modify the correct user setting__
-
-- `migration/create_users_table`
-- `config/auth.php` 
-- `config/validator`
 
 ## Menu And Permission
 
