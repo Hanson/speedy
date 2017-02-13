@@ -31,20 +31,27 @@ trait PermissionTrait
 
     public function getMenus($json = false)
     {
-        $menus = [];
-        $permissions = $this->permissions->toArray();
+        $menus = config('speedy.menus');
+        $result = [];
 
-        foreach ($permissions as $permission) {
-            if(count(explode('.', $permission['name'])) > 1){
-                list($name, , $subName) = explode('.', $permission['name']);
-                $menus[$name]['display'] = config("speedy.menus.{$name}.display");
-                $menus[$name]['sub'][$subName] = config("speedy.menus.{$name}.sub.{$subName}");
+        $permissions = $this->permissions->pluck('name')->toArray();
+
+        foreach ($menus as $key => $menu) {
+            if(isset($menu['sub']) && $menu['sub']){
+                foreach ($menu['sub'] as $subKey => $subMenu) {
+                    if(in_array("$key.sub.$subKey", $permissions)){
+                        $result[$key]['display'] = config("speedy.menus.{$key}.display");
+                        $result[$key]['sub'][$subKey] = config("speedy.menus.{$key}.sub.{$subKey}");
+                    }
+                }
             }else{
-                $menus[$permission['name']] = config("speedy.menus.{$permission['name']}");
+                if(in_array($key, $permissions)){
+                    $result[$key] = $menu;
+                }
             }
         }
 
-        return $json ? json_encode($menus, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP | JSON_UNESCAPED_UNICODE) : $menus;
+        return $json ? json_encode($result, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP | JSON_UNESCAPED_UNICODE) : $result;
     }
 
 }
