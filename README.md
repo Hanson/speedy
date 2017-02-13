@@ -88,7 +88,15 @@ make auth by default
 
 `php artisan make:auth`
 
+and modify the `$redirectTo = '/home'` to `$redirectTo = /admin` in  `LoginController`
+
 Start up a built-in development server, with `php artisan serve`, visit [http://localhost:8000/admin](http://localhost:8000/admin).
+
+__Tips: Make sure the following file have been modify the correct user setting__
+
+- `migration/create_users_table`
+- `config/auth.php` 
+- `config/validator`
 
 ## Menu And Permission
 
