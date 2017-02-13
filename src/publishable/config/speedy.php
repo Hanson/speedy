@@ -33,7 +33,7 @@ return [
     'table' => [
         'role' => 'role',
         'permission' => 'permission',
-        'user' => 'user',
+        'user' => 'users',
         'permission_role' => 'permission_role',
     ],
 

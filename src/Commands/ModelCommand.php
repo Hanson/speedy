@@ -86,7 +86,7 @@ class ModelCommand extends GeneratorCommand
 
     protected function replaceTable(&$stub)
     {
-        $stub =  str_replace('DummyTable', $this->model, $stub);
+        $stub =  str_replace('DummyTable', config("speedy.table.$this->model"), $stub);
 
         return $this;
     }
