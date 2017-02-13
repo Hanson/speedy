@@ -1,0 +1,114 @@
+body {
+    font-family: Raleway,sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #636b6f;
+    background-color: #f5f8fa;
+}
+.navbar-default {
+    background-color: #fff;
+    border-color: #d3e0e9;
+}
+.panel-default>.panel-heading,.panel-footer{
+    color: #333;
+    background-color: #fff;
+    border-color: #d3e0e9;
+}
+.sidebar {
+    z-index: 1000;
+    width: 250px;
+    position: fixed;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(53,61,71,1) 0%,rgba(33,41,46,1) 100%);
+}
+
+.sidebar li,ul{
+    list-style: none;
+}
+
+.sidebar .sidebar-brand {
+    line-height: 60px;
+    height: 60px;
+    padding: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.sidebar .sidebar-brand a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    text-align: center;
+    font-size: 20px;
+}
+
+.sidebar .sidebar-body ul {
+    padding: 0;
+}
+.sidebar .sidebar-body li {
+    margin: 0;
+}
+.sidebar .sidebar-body a {
+    width: 100%;
+    height: 40px;
+    font-size: 14px;
+    padding-left: 40px;
+    display: block;
+    text-decoration: none;
+    line-height: 40px;
+    color: #76838f;
+    cursor: pointer;
+}
+.sidebar .sidebar-body a:hover {
+    background-color: #2A363B;
+    color: #fff;
+}
+.sidebar .sidebar-body a.first-menu{
+}
+.sidebar .sidebar-body a.first-menu.active{
+    color: #fff;
+    background-color: #232323;
+}
+.sidebar .sidebar-body a.first-menu span{
+    float: right;
+    margin-right: 20px;
+    line-height: 40px;
+}
+.sidebar .sidebar-body li.first-menu-li .sub-menu {
+    background-color: #2a3139;
+}
+
+.sidebar .sidebar-body li.second-menu-li {
+    position: relative;
+}
+
+.sidebar .sidebar-body .second-menu-li::before {
+    background: #425668;
+    bottom: auto;
+    content: "";
+    height: 8px;
+    left: 23px;
+    margin-top: 15px;
+    position: absolute;
+    right: auto;
+    width: 8px;
+    z-index: 1;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+.sidebar .sidebar-body .second-menu-li::after {
+    border-left: 1px solid #425668;
+    bottom: 0;
+    content: "";
+    left: 27px;
+    position: absolute;
+    top: 0;
+}
+.sidebar .sidebar-body li.second-menu-li a {
+    padding-left: 50px;
+}

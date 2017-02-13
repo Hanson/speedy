@@ -1,0 +1,25 @@
+{
+    "name": "hanson/speedy",
+    "description": "A Laravel Admin Package to create a website quickly",
+    "keywords": ["laravel", "admin", "panel"],
+    "license": "MIT",
+    "support": {
+        "issues": "https://github.com/hanson/speedy/issues",
+        "source": "https://github.com/hanson/speedy"
+    },
+    "authors": [
+        {
+            "name": "HanSon",
+            "email": "h@hanc.cc"
+        }
+    ],
+    "require-dev": {
+        "laravel/framework": "5.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Hanson\\Speedy\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}

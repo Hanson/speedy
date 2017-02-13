@@ -1,0 +1,21 @@
+
+Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function(){
+    $namespace = '\\Hanson\\Speedy\\Http\\Controllers\\';
+    Route::get('/', $namespace.'HomeController@index');
+    Route::resource('user', $namespace.'UserController', ['names' => [
+        'index' => 'admin.user.index',
+        'create' => 'admin.user.create',
+        'store' => 'admin.user.store',
+        'edit' => 'admin.user.edit',
+        'update' => 'admin.user.update',
+        'destroy' => 'admin.user.destroy'
+    ]]);
+    Route::resource('role', $namespace.'RoleController', ['names' => [
+        'index' => 'admin.role.index',
+        'create' => 'admin.role.create',
+        'store' => 'admin.role.store',
+        'edit' => 'admin.role.edit',
+        'update' => 'admin.role.update',
+        'destroy' => 'admin.role.destroy'
+    ]]);
+});

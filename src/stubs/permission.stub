@@ -1,0 +1,23 @@
+<?php
+
+namespace DummyNamespace;
+
+use Auth;
+use Illuminate\Database\Eloquent\Model;
+
+class Permission extends Model
+{
+    protected $table = 'DummyTable';
+
+    protected $fillable = ['name', 'display_name'];
+
+    public function getMenu()
+    {
+        \Auth::user()->role_id;
+    }
+
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class);
+    }
+}
