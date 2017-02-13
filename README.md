@@ -5,6 +5,8 @@
 Speedy is a Laravel admin package build with bootstrap and vue, it contains a sidebar menu , a authentication and 
 a authorization control
 
+[中文文档](https://laravel-china.org/articles/3829)
+
 ## Install
 
 In your laravel application, execute the following command:
@@ -65,7 +67,7 @@ By default, models will be storage to `App/Models`, and user table is `user`, or
         // ...
     ],
     'table' => [
-        'user' => 'users', set user table name to users
+        'user' => 'users', 
         // 'user' => 'user',set user table name to users
     ]
 ```
