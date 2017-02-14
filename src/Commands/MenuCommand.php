@@ -73,7 +73,7 @@ class MenuCommand extends Command
         $permissionRoles = Speedy::getModelInstance('permission_role')->all();
         $role_ids = Speedy::getModelInstance('role')->all()->pluck('id')->toArray();
 
-        $role_ids = $permissionRoles->pluck('role_id')->reject(function ($value, $key) use ($role_ids){
+        $role_ids = $permissionRoles->pluck('role_id')->reject(function ($value) use ($role_ids){
             return in_array($value, $role_ids);
         })->unique();
 
@@ -85,13 +85,13 @@ class MenuCommand extends Command
         foreach (config('speedy.menus') as $name => $menu) {
             if (isset($menu['sub']) && $menu['sub']) {
                 foreach ($menu['sub'] as $subName => $subMenu) {
-                    Speedy::getModelInstance('permission')->firstOrCreate(['name' => "{$name}.sub.{$subName}"], [
+                    Speedy::getModelInstance('permission')->firstOrCreate(['name' => "{$name}.sub.{$subName}"])->update([
                         'name' => "{$name}.sub.{$subName}",
                         'display_name' => "{$subMenu['display']}",
                     ]);
                 }
             } else {
-                Speedy::getModelInstance('permission')->firstOrCreate(['name' => $name], [
+                Speedy::getModelInstance('permission')->firstOrCreate(['name' => $name])->update([
                     'name' => $name,
                     'display_name' => "{$menu['display']}",
                 ]);

@@ -19,3 +19,5 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function(){
         'destroy' => 'admin.role.destroy'
     ]]);
 });
+
+Route::get('logout', 'Auth\AuthController@getLogout');

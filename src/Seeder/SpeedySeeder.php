@@ -14,18 +14,18 @@ class SpeedySeeder extends Seeder
      */
     public function run()
     {
-        Speedy::getModelInstance('role')->firstOrCreate(['name' => 'admin',], ['display_name' => 'administrator',]);
+        Speedy::getModelInstance('role')->firstOrCreate(['name' => 'admin',])->update(['display_name' => 'administrator',]);
 
         foreach(config('speedy.menus') as $name => $menu){
             if(isset($menu['sub']) && $menu['sub']){
                 foreach ($menu['sub'] as $subName => $subMenu) {
-                    Speedy::getModelInstance('permission')->firstOrCreate(['name' => "{$name}.sub.{$subName}"],[
+                    Speedy::getModelInstance('permission')->firstOrCreate(['name' => "{$name}.sub.{$subName}"])->update([
                         'name' => "{$name}.sub.{$subName}",
                         'display_name' => "{$subMenu['display']}",
                     ]);
                 }
             }else{
-                Speedy::getModelInstance('permission')->firstOrCreate(['name' => $name],[
+                Speedy::getModelInstance('permission')->firstOrCreate(['name' => $name])->update([
                     'name' => $name,
                     'display_name' => "{$menu['display']}",
                 ]);

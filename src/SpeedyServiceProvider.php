@@ -51,7 +51,7 @@ class SpeedyServiceProvider extends ServiceProvider
         $this->publishes([$prefix . '/assets/' => public_path()]);
         $this->publishes([$prefix . '/database/' => database_path()]);
         $this->publishes([$prefix . '/config/' => config_path()]);
-        $this->publishes([$prefix . '/resources/' => resource_path()]);
+        $this->publishes([$prefix . '/resources/' => base_path('/resources')]);
     }
 
     private function registerConsoleCommands()
