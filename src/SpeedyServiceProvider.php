@@ -38,7 +38,11 @@ class SpeedyServiceProvider extends ServiceProvider
      */
     public function boot(Router $router, Dispatcher $event)
     {
-        $router->aliasMiddleware('speedy.auth', SpeedyAdminMiddleware::class);
+        if (app()->version() >= 5.4) {
+            $router->aliasMiddleware('speedy.auth', SpeedyAdminMiddleware::class);
+        } else {
+            $router->middleware('speedy.auth', SpeedyAdminMiddleware::class);
+        }
     }
 
     public function registerPublishableResources()
