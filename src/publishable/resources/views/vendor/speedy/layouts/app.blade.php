@@ -93,20 +93,18 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/vue@2.1.10/dist/vue.min.js"></script>
     <script>
-        var app = new Vue({
-            el: '#app',
+        var sidebar = new Vue({
+            el: '#sidebar',
             data: {
-                sidebar: {
-                    menus: [],
-                    active: ''
-                }
+                menus: [],
+                active: ''
             },
             methods: {
                 toggleMenu: function(id){
-                    this.sidebar.active = this.sidebar.active == id ? '' : id;
+                    this.active = this.active == id ? '' : id;
                 },
                 setMenus: function(menus){
-                    this.sidebar.menus = menus;
+                    this.menus = menus;
                 },
                 isCurrentUrl: function(url){
                     return window.location.pathname.indexOf(url) !== -1;
