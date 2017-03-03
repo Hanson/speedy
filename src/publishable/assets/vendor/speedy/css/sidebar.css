@@ -14,8 +14,12 @@ body {
     background-color: #fff;
     border-color: #d3e0e9;
 }
+.content-wrapper {
+  margin-left: 250px;
+  width: 100%;
+}
 .sidebar {
-    z-index: 1000;
+    z-index: 9999;
     width: 250px;
     position: fixed;
     list-style: none;
