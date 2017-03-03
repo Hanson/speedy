@@ -36,7 +36,7 @@ body {
     padding: 0;
     top: 0;
     height: 100%;
-    background: linear-gradient(45deg, rgba(53,61,71,1) 0%,rgba(33,41,46,1) 100%);
+    background-color: #324157;
 }
 
 .sidebar li,ul{
@@ -71,7 +71,7 @@ body {
     width: 100%;
     height: 40px;
     font-size: 14px;
-    padding-left: 40px;
+    padding-left: 30px;
     display: block;
     text-decoration: none;
     line-height: 40px;
@@ -86,12 +86,12 @@ body {
 
 .sidebar .sidebar-body a.first-menu.active{
     color: #fff;
-    background-color: #232323;
+    background-color: #48576A;
 }
 
 .sidebar .sidebar-body a.first-menu span{
     float: right;
-    margin-right: 20px;
+    margin-right: 30px;
     line-height: 40px;
 }
 
