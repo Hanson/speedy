@@ -5,7 +5,7 @@ namespace Hanson\Speedy\Http\Middleware;
 use Closure;
 use Illuminate\Support\Facades\Auth;
 
-class SpeedyAdminMiddleware
+class SpeedyRoleMiddleware
 {
     /**
      * Handle an incoming request.
@@ -19,7 +19,7 @@ class SpeedyAdminMiddleware
     {
         $user = Auth::user();
 
-        if(!$user->hasPermission($permissionName)){
+        if(!$user->role_id){
             abort(403, trans('view.admin.public.403'));
         }
 
