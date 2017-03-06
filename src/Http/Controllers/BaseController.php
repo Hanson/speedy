@@ -21,7 +21,11 @@ class BaseController extends LaravelBaseController
 
     public function __construct()
     {
-        $this->middleware('speedy.auth:' . $this->permissionName);
+        $this->middleware('speedy.role');
+
+        if ($this->permissionName) {
+            $this->middleware('speedy.auth:' . $this->permissionName);
+        }
     }
 
     /**

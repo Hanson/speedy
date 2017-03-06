@@ -8,6 +8,7 @@
 
 namespace Hanson\Speedy;
 
+use Hanson\Speedy\Http\Middleware\SpeedyRoleMiddleware;
 use Illuminate\Routing\Router;
 use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\ServiceProvider;
@@ -40,8 +41,10 @@ class SpeedyServiceProvider extends ServiceProvider
     {
         if (app()->version() >= 5.4) {
             $router->aliasMiddleware('speedy.auth', SpeedyAdminMiddleware::class);
+            $router->aliasMiddleware('speedy.role', SpeedyRoleMiddleware::class);
         } else {
             $router->middleware('speedy.auth', SpeedyAdminMiddleware::class);
+            $router->middleware('speedy.role', SpeedyRoleMiddleware::class);
         }
     }
 
