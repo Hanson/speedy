@@ -15,7 +15,7 @@ class SpeedyRoleMiddleware
      * @param $permissionName
      * @return mixed
      */
-    public function handle($request, Closure $next, $permissionName)
+    public function handle($request, Closure $next)
     {
         $user = Auth::user();
 
