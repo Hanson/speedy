@@ -8,7 +8,7 @@
             <template v-for="(menu, key) in menus">
                 <li class="first-menu-li">
                     <a v-bind:class="[isCurrentUrl(menu.url) ? 'active' : '', 'first-menu']" v-on:click="toggleMenu(key)" v-bind:id="'menu-' + key" v-bind:href="menu.url ? menu.url : 'javascript:;'">@{{ menu.display }}
-                        <span v-if="menu.sub" class="glyphicon glyphicon-chevron-down"></span>
+                        <span v-if="menu.sub" class="glyphicon glyphicon-chevron-down" v-bind:class="{ 'menu-expand-indicator' : active == key }"></span>
                     </a>
                     <ul v-if="menu.sub" v-bind:id="'sub-menu-' + key" class="sub-menu" v-bind:style="{display: active == key ? 'block' : 'none'}">
                         <template v-for="sub in menu.sub">
