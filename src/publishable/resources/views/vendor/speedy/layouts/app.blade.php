@@ -106,10 +106,16 @@
                 setMenus: function(menus){
                     this.menus = menus;
                 },
-                isCurrentUrl: function(url){
+                isCurrentUrl: function(url, key){
                     var parser = document.createElement('a');
                     parser.href = url;
-                    return parser.pathname === window.location.pathname;
+
+                    if(parser.pathname === window.location.pathname){
+                        this.active = key;
+                        return true;
+                    }
+
+                    return false;
                 }
             },
             created: function(){
