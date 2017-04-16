@@ -12,7 +12,7 @@
                     </a>
                     <ul v-if="menu.sub" v-bind:id="'sub-menu-' + key" class="sub-menu" v-bind:style="{display: active == key ? 'block' : 'none'}">
                         <template v-for="sub in menu.sub">
-                            <li class="second-menu-li"><a v-bind:class="[isCurrentUrl(sub.url) ? 'active' : '', 'first-menu']" v-bind:href="sub.url" v-bind:target="sub.target ? sub.target : ''">@{{ sub.display }}</a></li>
+                            <li class="second-menu-li"><a v-bind:class="[isCurrentUrl(sub.url, key) ? 'active' : '', 'first-menu']" v-bind:href="sub.url" v-bind:target="sub.target ? sub.target : ''">@{{ sub.display }}</a></li>
                         </template>
                     </ul>
                 </li>
