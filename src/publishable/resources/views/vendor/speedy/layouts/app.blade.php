@@ -107,7 +107,9 @@
                     this.menus = menus;
                 },
                 isCurrentUrl: function(url){
-                    return window.location.pathname.indexOf(url) !== -1;
+                    var parser = document.createElement('a');
+                    parser.href = url;
+                    return parser.pathname === window.location.pathname;
                 }
             },
             created: function(){
