@@ -111,7 +111,7 @@
                     parser.href = url;
 
                     if(parser.pathname === window.location.pathname){
-                        this.active = key;
+                        this.active = key ? key : this.active;
                         return true;
                     }
 
