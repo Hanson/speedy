@@ -1,7 +1,7 @@
 @if (!Auth::guest())
 <div id="sidebar" class="sidebar">
     <div class="sidebar-brand">
-        <a href="{{ url('admin/home') }}">{{ config('app.name') }}</a>
+        <a href="{{ url('admin') }}">{{ config('app.name') }}</a>
     </div>
     <div class="sidebar-body">
         <ul>
